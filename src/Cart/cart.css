@@ -1,0 +1,8 @@
+.cart {
+    padding: 15px;
+}
+
+.line-item {
+    margin: 10px;
+    border-bottom: 1px solid gray;
+}

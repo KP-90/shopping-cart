@@ -16,3 +16,14 @@
     background-color: aliceblue;
     height: 100vh;
 }
+
+#cart {
+    float: right;
+    display: flex;
+    margin: 0 5% 0 0;
+    align-items: center;
+}
+
+#cart > p {
+    font-size: 36px ;
+}
