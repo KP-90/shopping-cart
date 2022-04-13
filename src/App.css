@@ -60,14 +60,3 @@ li:hover {
     display: flex;
     gap: 25px;
 }
-
-.card {
-    border: 1px solid black;
-    width: 150px;
-    text-align: center;
-}
-
-.card > button {
-    width: 80%;
-    height: 35%;
-}

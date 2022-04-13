@@ -33,7 +33,7 @@ const Cart = (props) => {
                     <div key={index} className="line-item">
                         <h5>{item.name}</h5>
                         <p>${item.price}</p>
-                        <button>Delete</button>
+                        <button>Remove</button>
                     </div>
                 )
             })}
