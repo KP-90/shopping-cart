@@ -26,9 +26,12 @@ const Home = (props) => {
     return(
         <div>
             <h1>homepage</h1>
-            {inventory.map(item => {
-                return <Card key={item.name} info={item} />
-            })}
+            <div className='container'>
+                {inventory.map(item => {
+                    return <Card key={item.name} info={item} />
+                })}
+            </div>
+            
         </div>
     )
 }

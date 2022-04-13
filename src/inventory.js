@@ -6,5 +6,9 @@ export const inventory = [
     {
         name: "Fries",
         price: 2.99
+    },
+    {
+        name: "Shake",
+        price: 4.49
     }
 ]

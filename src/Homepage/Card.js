@@ -1,4 +1,6 @@
 const Card = (props) => {
+
+    
     return(
         <div key={props.name} className="card">
             <h5>{props.info.name}</h5>

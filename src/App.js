@@ -23,10 +23,13 @@ const App = (props) => {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="cart">Cart</Link></li>
-          <li>Hello</li>
+          <li>About</li>
         </ul>
       </div>
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
+      
     </div>
   );
 }
