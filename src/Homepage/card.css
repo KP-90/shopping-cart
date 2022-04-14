@@ -17,6 +17,11 @@
     top: 0%;
 }
 
+.card > button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .icon {
     font-size: xxx-large;
 }

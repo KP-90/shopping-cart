@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { inventory } from '../inventory'
 import './cart.css'
 const Cart = (props) => {
     let total = 0
@@ -6,8 +7,7 @@ const Cart = (props) => {
         total += (props.info[item].price)
     }
     
-    // Counting line items
-    
+    // Counting how many of each line item. Gets 
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
@@ -16,7 +16,7 @@ const Cart = (props) => {
     for (let i in sorted) {
         let count = 0
         for (let j in props.info) {
-            if(sorted[i].name == props.info[j].name) {
+            if(sorted[i].name === props.info[j].name) {
                 count += 1
             }
         }
@@ -25,20 +25,36 @@ const Cart = (props) => {
     // End counting line items
 
     useEffect(() => {
-        const handleDelete = (e) => {
-            let name = e.path[1].firstChild.innerText
-            props.setItems(props.info.filter(item => {
-                return item.name !== name
-            }))
+        const handlePlus = (e) => {
+            let name = e.path[1].firstChild.className
+            let x = inventory.find(item => item.name === name)
+            props.setItems(props.info.concat(x))
         }
 
-        const allBtns = document.querySelectorAll("button")
-        allBtns.forEach(btn => {
-            btn.addEventListener("click", handleDelete)
+        const handleMinus = (e) => {
+            let copy = props.info
+            let name = e.path[1].firstChild.className
+            let removal = props.info.find(i => {
+                return i.name === name
+            })
+            copy.splice(copy.indexOf(removal), 1)
+            props.setItems([].concat(copy))
+        }
+
+        const allPlus = document.querySelectorAll(".plus")
+        allPlus.forEach(btn => {
+            btn.addEventListener("click", handlePlus)
+        })
+        const allMinus = document.querySelectorAll(".minus")
+        allMinus.forEach(btn => {
+            btn.addEventListener("click", handleMinus)
         })
         return() => {
-            allBtns.forEach(btn => {
-                btn.removeEventListener("click", handleDelete)
+            allPlus.forEach(btn => {
+                btn.removeEventListener("click", handlePlus)
+            })
+            allMinus.forEach(btn => {
+                btn.removeEventListener("click", handleMinus)
             })
         }
     })
@@ -49,9 +65,10 @@ const Cart = (props) => {
             {sorted.map((item, index) => {
                 return(
                     <div key={index} className="line-item">
-                        <h5>{item.name} x{counts[index]}</h5>
+                        <h5 className={item.name}>{item.name} x{counts[index]}</h5>
                         <p>${item.price * counts[index]}</p>
-                        <button>Remove</button>
+                        <button className='minus'> - 1 </button>
+                        <button className='plus'> + 1 </button>
                     </div>
                 )
             })}
