@@ -66,7 +66,7 @@ const Cart = (props) => {
                 return(
                     <div key={index} className="line-item">
                         <h5 className={item.name}>{item.name} x{counts[index]}</h5>
-                        <p>${item.price * counts[index]}</p>
+                        <p>${(item.price * counts[index]).toFixed(2)}</p>
                         <button className='minus'> - 1 </button>
                         <button className='plus'> + 1 </button>
                     </div>
