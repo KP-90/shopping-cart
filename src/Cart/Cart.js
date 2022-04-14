@@ -11,7 +11,8 @@ const Cart = (props) => {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
-    let sorted = props.info.filter(unique)
+    let sorted = (props.info.filter(unique))
+    sorted = sorted.sort((a, b) => a.name - b.name)
     let counts = []
     for (let i in sorted) {
         let count = 0
