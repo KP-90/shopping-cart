@@ -6,24 +6,6 @@ const Cart = (props) => {
     for (let item in props.info) {
         total += (props.info[item].price)
     }
-    
-    // Counting how many of each line item. Gets 
-    const unique = (value, index, self) => {
-        return self.indexOf(value) === index
-    }
-    let sorted = (props.info.filter(unique))
-    sorted = sorted.sort((a, b) => a.name - b.name)
-    let counts = []
-    for (let i in sorted) {
-        let count = 0
-        for (let j in props.info) {
-            if(sorted[i].name === props.info[j].name) {
-                count += 1
-            }
-        }
-        counts.push(count)
-    }
-    // End counting line items
 
     useEffect(() => {
         const handlePlus = (e) => {
@@ -59,6 +41,29 @@ const Cart = (props) => {
             })
         }
     })
+
+    // Counting how many of each line item. Gets array of unique items, and counts how many times each item appears in original array
+    const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+    }
+    // sorting it so it displays correctly
+    let sorted = (props.info.filter(unique))
+    sorted.sort((a, b) => {
+        if (a.name > b.name) return 1
+        if (a.name < b.name) return -1
+        return 0;
+    })
+    let counts = []
+    for (let i in sorted) {
+        let count = 0
+        for (let j in props.info) {
+            if(sorted[i].name === props.info[j].name) {
+                count += 1
+            }
+        }
+        counts.push(count)
+    }
+    // End counting line items
 
     return(
         <div className='cart-contents'>
