@@ -24,8 +24,8 @@ const Home = (props) => {
       })
 
     return(
-        <div>
-            <h1>homepage</h1>
+        <div className='homepage'>
+            <h1>Homepage</h1>
             <div className='container'>
                 {inventory.map(item => {
                     return <Card key={item.name} info={item} />

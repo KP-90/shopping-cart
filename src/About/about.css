@@ -1,0 +1,13 @@
+.about {
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+}
+
+article {
+    padding: 5px;
+}

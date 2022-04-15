@@ -56,7 +56,13 @@ li:hover {
     font-size: 36px ;
 }
 
+.homepage {
+    text-align: center;
+}
+
 .container {
+    margin-top: 20px;
     display: flex;
     gap: 25px;
+    justify-content: center;
 }
