@@ -7,8 +7,10 @@ const About = () => {
             <h2>About This Store</h2>
             <img src={image1} alt="burger"/>
             <article>
-                <p>This is an about page just to add some extra routes to this project. </p>
-                <p>This Store was founded qin 2022 as a minimilist store only serving the most basic of items. 
+                <p>This is an about page just to add some extra routes to this project. This projects focus was to get some experience using React routes along
+                    with Reacts useState, setState, and useEffect tools. 
+                </p>
+                <p>This is filler stuff. This Store was founded in 2022 as a minimilist store only serving the most basic of items. 
                     We have Burger, Fries, Drink, and Toy. Nothing more, nothing less.
                     Want something else like chicken? Fish? Go somewhere else.
                 </p>
