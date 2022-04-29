@@ -4,4 +4,4 @@ Odin project shopping cart - https://www.theodinproject.com/lessons/node-path-ja
 
 Learned how to use React routing to create multiple pages.
 
-See it live: https://prockle.github.io/shopping-cart/
+See it live: https://KP-90.github.io/shopping-cart/
